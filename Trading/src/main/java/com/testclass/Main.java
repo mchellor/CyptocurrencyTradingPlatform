@@ -10,5 +10,6 @@ public class Main {
 		
 		System.out.println("This is GC's Branch");
 		System.out.println("Try to merge my branch to master");
+		System.out.println("Second Try....");
 	}
 }
