@@ -8,5 +8,8 @@ public class Main {
 		System.out.println("new test");
 		System.out.println("Modefy in Web Client!!!");
 		
+		System.out.println("This is GC's Branch");
+		System.out.println("Try to merge my branch to master");
+		System.out.println("Second Try....");
 	}
 }
