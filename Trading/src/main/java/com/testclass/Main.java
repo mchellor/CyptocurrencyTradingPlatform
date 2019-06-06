@@ -6,5 +6,6 @@ public class Main {
 		System.out.println("modified by Can Li");
 		System.out.println("GC test1");
 		System.out.println("new test");
+		
 	}
 }
