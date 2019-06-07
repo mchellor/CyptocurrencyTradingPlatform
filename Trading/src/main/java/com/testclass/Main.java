@@ -17,5 +17,7 @@ public class Main {
 		System.out.println("fri 2:48");
 		System.out.println("Fri 3:07");
 		System.out.println("3:22");
+		
+		System.out.println("3:32");
 	}
 }
