@@ -19,6 +19,6 @@ public class Main {
 		System.out.println("3:22");
 		
 		System.out.println("3:32");
-		System.out.println("3:34");
+		System.out.println("3:40");
 	}
 }
