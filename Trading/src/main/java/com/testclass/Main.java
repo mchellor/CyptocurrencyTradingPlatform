@@ -14,9 +14,7 @@ public class Main {
 		
 		System.out.println("My Third Try...");
 		System.out.println("Friday fourth");
-		
-		
-		
 		System.out.println("fri 2:48");
+		System.out.println("Fri 3:07");
 	}
 }
