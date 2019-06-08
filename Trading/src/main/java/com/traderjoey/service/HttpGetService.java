@@ -1,5 +1,9 @@
 package com.traderjoey.service;
 
-public interface HttpService {
-	public String httpCall(String urlString);
+import org.json.JSONObject;
+
+public interface HttpGetService {
+	public String getString();
+
+	public JSONObject getJsonObject();
 }
