@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 
 import org.junit.Test;
 
-import com.traderjoey.exceptions.SqlConnectionFailException;
+import com.traderjoey.exception.SqlConnectionFailException;
 
 public class DBUtil {
 	private String driverString = "com.mysql.jdbc.Driver";
