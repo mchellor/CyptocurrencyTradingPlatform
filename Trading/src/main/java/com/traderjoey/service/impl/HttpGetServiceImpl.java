@@ -19,6 +19,7 @@ public class HttpGetServiceImpl implements HttpGetService {
 	CloseableHttpClient client = HttpClients.createDefault();
 
 	public HttpGetServiceImpl(String urlString) {
+		
 		super();
 		this.urlString = urlString;
 	}
