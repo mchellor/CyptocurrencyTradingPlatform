@@ -8,18 +8,27 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
+import org.json.JSONObject;
 
-import com.traderjoey.service.HttpService;
+import com.traderjoey.service.HttpGetService;
 
-public class HttpServiceImpl implements HttpService {
+public class HttpGetServiceImpl implements HttpGetService {
+	String urlString;
+	String responseBodyString = null;
+	JSONObject responseBodyJson = null;
+	CloseableHttpClient client = HttpClients.createDefault();
+
+	public HttpGetServiceImpl(String urlString) {
+		super();
+		this.urlString = urlString;
+	}
 
 	@Override
-	public String httpCall(String urlString) {
+	public String getString() {
 		// TODO Auto-generated method stub
-		String responseBodyString = null;
-		CloseableHttpClient client = HttpClients.createDefault();
-		HttpGet httpGet = new HttpGet(urlString);
+
 		try {
+			HttpGet httpGet = new HttpGet(urlString);
 			CloseableHttpResponse response = client.execute(httpGet);
 			HttpEntity entity = response.getEntity();
 			responseBodyString = EntityUtils.toString(entity);
@@ -28,6 +37,12 @@ public class HttpServiceImpl implements HttpService {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return null;
+	}
+
+	@Override
+	public JSONObject getJsonObject() {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
