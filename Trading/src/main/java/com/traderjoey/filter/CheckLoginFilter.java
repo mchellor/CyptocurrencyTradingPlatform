@@ -19,7 +19,9 @@ public class CheckLoginFilter implements Filter{
 
 	@Override
 	/**
-	 * 过滤所有的以jsp结尾的url,如果不是以login.jsp或者register.jsp结尾,则使用客户端跳转到login.jsp
+	 * 为了避免有人绕过咱们设计的必须登录才能用的机制,此filter用于检查当前用户:
+	 * 1.如果其为非空,则不采取任何行动
+	 * 2.如果其为空,检查当前的以jsp结尾的url,如果这个url不是以index.jsp或者register.jsp结尾,则使用客户端跳转到index.jsp
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {

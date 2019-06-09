@@ -41,10 +41,4 @@ public class HttpGetServiceImpl implements HttpGetService {
 		return null;
 	}
 
-	@Override
-	public JSONObject getJsonObject() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }
