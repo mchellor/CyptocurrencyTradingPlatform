@@ -8,14 +8,14 @@ import org.junit.Test;
 import com.traderjoey.exception.SqlConnectionFailException;
 
 public class DBUtil {
-	private String driverString = "com.mysql.jdbc.Driver";
-	private String urlString = "jdbc:mysql://localhost:3306/traderjoey";
-	private String userString = "root";
-	private String passwordString = "admin";
-	private Connection connection = null;
+	private static String driverString = "com.mysql.jdbc.Driver";
+	private static String urlString = "jdbc:mysql://localhost:3306/traderjoey";
+	private static String userString = "root";
+	private static String passwordString = "admin";
+	private static Connection connection = null;
 
 	@Test
-	public Connection getConnection() {
+	public static Connection getConnection() {
 		try {
 			Class.forName(driverString);
 			connection = DriverManager.getConnection(urlString, userString, passwordString);
@@ -24,7 +24,6 @@ public class DBUtil {
 				throw new SqlConnectionFailException();
 			}
 		} catch (Exception e) {
-			// TODO: handle exception
 			e.printStackTrace();
 		}
 		return connection;
