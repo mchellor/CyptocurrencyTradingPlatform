@@ -26,6 +26,7 @@ public class DBUtil {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
 		return connection;
 	}
 

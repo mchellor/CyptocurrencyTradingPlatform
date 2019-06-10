@@ -7,38 +7,27 @@ import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
-import org.apache.http.util.EntityUtils;
-import org.json.JSONObject;
+import com.traderjoey.dto.RequestUrl;
+import com.traderjoey.dto.ResponseInfo;
 
-import com.traderjoey.service.HttpGetService;
 
-public class HttpGetServiceImpl implements HttpGetService {
-	String urlString;
-	String responseBodyString = null;
-	JSONObject responseBodyJson = null;
+public class HttpGetServiceImpl{
+	RequestUrl url;
+	ResponseInfo response;
 	CloseableHttpClient client = HttpClients.createDefault();
+	HttpEntity entity = null;
 
-	public HttpGetServiceImpl(String urlString) {
-		
+	public HttpGetServiceImpl(RequestUrl url) {
 		super();
-		this.urlString = urlString;
-	}
-
-	@Override
-	public String getString() {
-		// TODO Auto-generated method stub
-
+		this.url = url;
 		try {
-			HttpGet httpGet = new HttpGet(urlString);
+			HttpGet httpGet = new HttpGet(url.urlString);
 			CloseableHttpResponse response = client.execute(httpGet);
 			HttpEntity entity = response.getEntity();
-			responseBodyString = EntityUtils.toString(entity);
-			return responseBodyString;
+			this.entity = entity;
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return null;
 	}
-
 }
